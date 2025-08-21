@@ -1,25 +1,45 @@
-﻿<Window x:Class="HotelReservation.Wpf.MainWindow"
+﻿<Window x:Class="HotelReservation.Presentation.Wpf.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:HotelReservation.Presentation.Wpf"
         Title="Hotel Reservation System" Height="720" Width="1280"
         Background="#F8FAFC">
+
+    <Window.DataContext>
+        <local:MainViewModel/>
+    </Window.DataContext>
+
+    <Window.Resources>
+        <!-- Конвертер для подсветки активной кнопки -->
+        <local:TabToBrushConverter x:Key="TabToBrushConverter" ActiveBrush="#D9EAFD" InactiveBrush="Transparent"/>
+    </Window.Resources>
+
     <DockPanel>
         <!-- Top sidebar -->
         <StackPanel Orientation="Horizontal" Background="#D9EAFD" DockPanel.Dock="Top" Height="45">
             <TextBlock Text="Hotel Reservation" Foreground="Black" 
                        FontSize="16" Padding="10" VerticalAlignment="Center" />
-            <Button Content="Rooms" Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"/>
-            <Button Content="Reservations" Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"/>
-            <Button Content="Guests" Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"/>
+
+            <Button Content="Rooms" Command="{Binding SelectTabCommand}" CommandParameter="Rooms"
+                    Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"
+                    Background="{Binding SelectedTab, Converter={StaticResource TabToBrushConverter}, ConverterParameter=Rooms}"/>
+
+            <Button Content="Reservations" Command="{Binding SelectTabCommand}" CommandParameter="Reservations"
+                    Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"
+                    Background="{Binding SelectedTab, Converter={StaticResource TabToBrushConverter}, ConverterParameter=Reservations}"/>
+
+            <Button Content="Guests" Command="{Binding SelectTabCommand}" CommandParameter="Guests"
+                    Style="{StaticResource SideBarButton}" Margin="5,0" VerticalAlignment="Bottom"
+                    Background="{Binding SelectedTab, Converter={StaticResource TabToBrushConverter}, ConverterParameter=Guests}"/>
         </StackPanel>
 
         <!-- Main content -->
         <StackPanel Margin="20">
-            <TextBlock Text="Rooms" FontSize="20" Margin="0,0,0,10"/>
-            <ListBox x:Name="RoomsList" Height="500"/>
+            <TextBlock Text="{Binding SelectedTab}" FontSize="20" Margin="0,0,0,10"/>
+            <ListBox ItemsSource="{Binding Items}" Height="500"/>
             <StackPanel Orientation="Horizontal" Margin="0,10,0,0">
-                <Button Content="Add Room" Style="{StaticResource ContentButton}" Margin="0,0,10,0"/>
-                <Button Content="Delete Room" Style="{StaticResource ContentButton}"/>
+                <Button Content="Add" Style="{StaticResource ContentButton}" Margin="0,0,10,0" Command="{Binding AddCommand}"/>
+                <Button Content="Delete" Style="{StaticResource ContentButton}" Command="{Binding DeleteCommand}"/>
             </StackPanel>
         </StackPanel>
     </DockPanel>

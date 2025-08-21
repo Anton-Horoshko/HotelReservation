@@ -38,4 +38,10 @@ public class RoomRepository : IRoomRepository
         => await _context.Rooms
             .AsNoTracking()
             .FirstOrDefaultAsync(r => r.Id == id);
+
+    public Task<List<Room>> GetByReservationIdAsync(Guid reservationId)
+        => _context.Rooms
+            .AsNoTracking()
+            .Where(r => r.ReservationId == reservationId)
+            .ToListAsync();
 }

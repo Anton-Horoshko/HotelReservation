@@ -8,4 +8,5 @@ public interface IReservationRepository
     Task<IEnumerable<Reservation>> GetAllWithPaginationAsync(int pageSize, int pageNumber);
     Task AddAsync(Reservation reservation);
     Task DeleteAsync(Guid id);
+    Task<List<Reservation>> GetByRoomIdAsync(long roomId);
 }

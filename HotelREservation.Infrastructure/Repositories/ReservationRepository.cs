@@ -31,4 +31,9 @@ public class ReservationRepository : IReservationRepository
         => _context.Reservations
             .AsNoTracking()
             .FirstOrDefaultAsync(r => r.Id == id);
+    public Task<List<Reservation>> GetByRoomIdAsync(long roomId)
+        => _context.Reservations
+            .AsNoTracking()
+            .Where(r => r.RoomId == roomId)
+            .ToListAsync();
 }

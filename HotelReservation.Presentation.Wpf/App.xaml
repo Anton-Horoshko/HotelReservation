@@ -4,7 +4,6 @@
              xmlns:local="clr-namespace:HotelReservation.Presentation.Wpf"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-        <!-- Стиль для кнопок сайдбара -->
         <Style x:Key="SideBarButton" TargetType="Button">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="Transparent"/>
@@ -39,7 +38,6 @@
             </Setter>
         </Style>
 
-        <!-- Стиль для контентных кнопок -->
         <Style x:Key="ContentButton" TargetType="Button">
             <Setter Property="Foreground" Value="Black"/>
             <Setter Property="Background" Value="#D9EAFD"/>

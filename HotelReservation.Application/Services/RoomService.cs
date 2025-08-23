@@ -29,11 +29,6 @@ public class RoomService : IRoomService
     public Task<Room?> GetByIdAsync(long id)
         => _unitOfWork.Rooms.GetByIdAsync(id);
 
-    public Task<List<Room>> GetByReservationIdAsync(Guid reservationId)
-        => _unitOfWork.Rooms.GetByReservationIdAsync(reservationId);
-
-    public Task<IEnumerable<Room>> GetWithPaginationAsync(int pageNumber, int pageSize)
-    {
-        throw new NotImplementedException();
-    }
+    public Task<List<Room>> GetWithPaginationAsync(int pageNumber, int pageSize)
+        => _unitOfWork.Rooms.GetAllWithPaginationAsync(pageSize, pageNumber);
 }

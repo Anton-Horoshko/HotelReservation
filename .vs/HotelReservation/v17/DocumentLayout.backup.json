@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\user\\source\\repos\\HotelReservation\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6F564F2C-300A-4A4F-B0C4-4132AD19CCC3}|HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj|c:\\users\\user\\source\\repos\\hotelreservation\\hotelreservation.presentation.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6F564F2C-300A-4A4F-B0C4-4132AD19CCC3}|HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj|solutionrelative:hotelreservation.presentation.wpf\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{6F564F2C-300A-4A4F-B0C4-4132AD19CCC3}|HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj|c:\\users\\user\\source\\repos\\hotelreservation\\hotelreservation.presentation.wpf\\hotelreservation.presentation.wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6F564F2C-300A-4A4F-B0C4-4132AD19CCC3}|HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj|solutionrelative:hotelreservation.presentation.wpf\\hotelreservation.presentation.wpf.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6F564F2C-300A-4A4F-B0C4-4132AD19CCC3}|HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj|c:\\users\\user\\source\\repos\\hotelreservation\\hotelreservation.presentation.wpf\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
@@ -23,13 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HotelReservation\\HotelReservation.Presentation.Wpf\\MainWindow.xaml",
-              "RelativeDocumentMoniker": "HotelReservation.Presentation.Wpf\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\user\\source\\repos\\HotelReservation\\HotelReservation.Presentation.Wpf\\MainWindow.xaml",
-              "RelativeToolTip": "HotelReservation.Presentation.Wpf\\MainWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-21T16:10:25.804Z",
+              "Title": "HotelReservation.Presentation.Wpf",
+              "DocumentMoniker": "C:\\Users\\user\\source\\repos\\HotelReservation\\HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj",
+              "RelativeDocumentMoniker": "HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj",
+              "ToolTip": "C:\\Users\\user\\source\\repos\\HotelReservation\\HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj",
+              "RelativeToolTip": "HotelReservation.Presentation.Wpf\\HotelReservation.Presentation.Wpf.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-08-23T09:02:48.077Z",
               "EditorCaption": ""
             },
             {
@@ -41,7 +42,7 @@
               "ToolTip": "C:\\Users\\user\\source\\repos\\HotelReservation\\HotelReservation.Presentation.Wpf\\App.xaml",
               "RelativeToolTip": "HotelReservation.Presentation.Wpf\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-08-21T16:10:14.904Z",
+              "WhenOpened": "2025-08-23T08:57:11.106Z",
               "EditorCaption": ""
             }
           ]

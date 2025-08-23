@@ -20,12 +20,18 @@ public class RoomRepository : IRoomRepository
     public async Task DeleteAsync(long id)
         => await _context.Rooms.Where(r => r.Id == id).ExecuteDeleteAsync();
 
-    public async Task<IEnumerable<Room>> GetAllWithPaginationAsync(int pageSize, int pageNumber)
-        => await _context.Rooms
-            .Skip((pageNumber - 1) * pageSize)
+    public async Task<List<Room>> GetAllWithPaginationAsync(int pageSize, int pageNumber)
+    {
+        var TotalCount = await _context.Rooms.CountAsync();
+        var ElementsToSkip = (pageNumber - 1) * pageSize;
+        if (TotalCount - ElementsToSkip < pageSize)
+            pageSize = TotalCount - ElementsToSkip;
+        return await _context.Rooms
+            .Skip(ElementsToSkip)
             .Take(pageSize)
             .AsNoTracking()
             .ToListAsync();
+    }
 
     public async Task UpdateAsync(Room room)
         => await _context.Rooms
@@ -38,10 +44,4 @@ public class RoomRepository : IRoomRepository
         => await _context.Rooms
             .AsNoTracking()
             .FirstOrDefaultAsync(r => r.Id == id);
-
-    public Task<List<Room>> GetByReservationIdAsync(Guid reservationId)
-        => _context.Rooms
-            .AsNoTracking()
-            .Where(r => r.ReservationId == reservationId)
-            .ToListAsync();
 }

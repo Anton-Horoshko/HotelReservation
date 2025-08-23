@@ -5,10 +5,10 @@ using HotelREservation.Infrastructure.Repositories;
 
 namespace HotelReservation.Application.Services;
 
-public class ReservstionService : IReservationService
+public class ReservationService : IReservationService
 {
 
-    public ReservstionService(IUnitOfWork unitOfWork)
+    public ReservationService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
